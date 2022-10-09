@@ -9,12 +9,6 @@ on:
         required: true
 
 jobs:
-  two-dimensions:
-    name: Build ${{ inputs.ref }} (2d)
-    uses: bend-n/godot-builds/.github/workflows/reusable-build.yml@main
-    with:
-      ref: ${{ inputs.ref }}
-    secrets: inherit
   all-dimensions:
     name: Build ${{ inputs.ref }} (normal)
     uses: bend-n/godot-builds/.github/workflows/reusable-build.yml@main
@@ -23,4 +17,5 @@ jobs:
       name: godot
       build-name: normal
       modules-path: ./.github/normal-build-modules.py
+      flags: ''
     secrets: inherit
